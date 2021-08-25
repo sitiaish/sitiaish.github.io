@@ -1,97 +1,102 @@
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Source Code Pro', 'monospace';
-
+$font-primary: 'Nunito', sans-serif;
+$font-secondary: 'Lato', sans-serif;
 
 .font-secondary {
   font-family: $font-secondary !important;
 }
 
-.font-primary {
-  font-family: $font-primary !important;
-}
-
-.text--dark {
-  color: #47385C;
-}
-
-.text--black {
-  color: #0e1111;
-}
-
-.text--gold {
-  color: #B0A894;
-}
-
-.text-h1--aa {
-  font-size: 64px;
-  line-height: 72px;
-  font-family: $font-primary;
-  color: #333333;
-  // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 40px;
-    line-height: 52px;
-  }
-}
-
-.text-h2--aa {
-  font-size: 48px;
-  line-height: 60px;
-  font-family: $font-primary;
-  color: #333333;
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 32px;
-    line-height: 48px;
-  }
-}
-
-.text-h3--aa {
-  font-size: 32px;
-  line-height: 36px;
-  font-family: $font-secondary;
-  color: #333333;
+// typography
+.text-hero {
+  font-size: 12rem;
   font-weight: 300;
+  letter-spacing: 0.5px;
+  font-family: $font-primary;
+  color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 3rem;
   }
 }
 
-.text-h4--aa {
-  font-size: 28px;
-  line-height: 42px;
+.text-header {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   font-family: $font-primary;
-  color: #333333;
+  color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 24px;
+    font-size: 36px;
     line-height: 36px;
   }
 }
 
-.text-body-1--aa {
+.text-section {
   font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   font-family: $font-primary;
-  color: #333333;
+  color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 20px;
   }
 }
 
-.text-body-2--aa {
+.text-title {
   font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: $font-primary;
+  text-transform: uppercase;
+  color: #2e2e2e;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.text-prompt {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: $font-primary;
+  text-transform: uppercase;
+  color: #2e2e2e;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.text-reference {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: $font-primary;
+  color: #2e2e2e;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.text-body {
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 1.2px;
   font-family: $font-secondary;
-  color: #333333;
+  color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     font-size: 16px;
@@ -99,73 +104,18 @@ $font-secondary: 'Source Code Pro', 'monospace';
   }
 }
 
-.text-body-3--aa {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  font-family: $font-primary;
-  color: #333333;
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 14px;
-    line-height: 22px;
-  }  
-}
-
-.text-body-4--aa{
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  font-family: $font-secondary;
-  color: #333333;
-  letter-spacing: 0.08em;
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 14px;
-    line-height: 20px;
-  }  
-}
-
-.text-blockquote {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 36px;
-  font-family: $font-primary;
-  color: #333333;
-  text-transform: uppercase;
-  text-align: center;
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 28px;
-  }  
-}
-
-.text-ref {
-  font-size: 14px;
-  line-height: 22px;
-  font-family: $font-secondary;
-
-  @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 12px;
-    line-height: 18px;
-  }
-}
-
-.line-divider {
-  border-bottom: #9C89D8;
-}
-
-// p > a, li > a {
-//   color: #0e1111 !important;
-//   font-weight: 700;
-//   border-bottom: 2px solid #0e1111;
-//   text-decoration: none;
-//   word-break: break-word;
-// }
-
-p > a, li > a {
-  color: #0e1111 !important;
-  border-bottom: 2px solid #D5C0D2;
+p > a {
+  color: #4A483D !important;
+  border-bottom: 2px solid #B8B8B8;
   font-family: $font-primary;
   text-decoration: none;
+}
+
+li > a {
+  color: #4A483D !important;
+  text-decoration: none;  
+}
+
+.text--accent-sand {
+ color: #db9487;
 }

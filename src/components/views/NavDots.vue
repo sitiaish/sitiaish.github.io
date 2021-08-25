@@ -1,0 +1,84 @@
+<template>
+  <div class="nav-wrapper">
+    <div 
+      v-for="(n) in sections"
+      :key="n.sections + '-fixed-dots'"
+      class="dot" 
+      @mouseenter="handle(n.instructions)"
+      @mouseleave="handle('Navigate with any of the three circles there!')"
+      @click="jumpSection(n.section)"
+    />
+  </div>      
+</template>
+
+<script>
+export default {
+  name: 'Sectionfooter',
+  data() {
+    return {
+      instruction: 'Navigate with any of the three circles there!',
+      sections: [
+        { instructions: 'Click here to see my work on datastories', section: 'datastories'},
+        { instructions: 'Heyyo! I talk about myself in this section', section: 'about'},
+        { instructions: ' showcase some personal projects that I made in my spare time!', section: 'projects'},
+      ]
+    }
+  },
+  methods: {
+    handle(message) {
+      this.instruction = message;
+    },
+    jumpSection(selected) {
+      const section = document.querySelectorAll(`.page-${selected}`)[0];
+      section.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+    }    
+  }
+}
+</script>
+
+
+<style lang="scss" scoped>
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 48px;
+  transform: translate(0, -50%);
+
+  .dot {
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid #DB9480;
+    background-color: white;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dot:hover {
+    animation: bounce 1s;
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(5px);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }      
+}
+
+
+</style>
+

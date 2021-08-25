@@ -1,4 +1,14 @@
 .container {
+  @media only screen and (min-width: #{map-get($grid-breakpoints, 'lg')}) {
+    max-width: map-get($grid-breakpoints, 'lg') * 0.93;
+    padding: 0;
+  }
+  
+  @media only screen and (min-width: map-get($grid-breakpoints, 'xl')) {
+    max-width: map-get($grid-breakpoints, 'lg') * 1.034 !important;
+    padding: 0;    
+  }  
+  
   &.outer {
     padding-top: 0;
     padding-bottom: 0;
@@ -22,8 +32,44 @@
       padding: 0;
     }
   }
-  @media only screen and (min-width: #{map-get($grid-breakpoints, 'xl')}) {
-    max-width: map-get($grid-breakpoints, 'xl') * 0.825;
-    padding: 0;
-  }  
+}
+
+
+.tilt-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.tilt-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 118px;
+  transform: rotateY(180deg);
+}
+
+.tilt-divider .shape-fill {
+  fill: #FFFFFF;
+}
+
+.tilt-divider-title {
+position: relative;
+top: calc(118px / 2.5);
+z-index: 1;
+text-align: center;
+
+&:after {
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid #2e2e2e;
+  top: 0;
+  bottom: -48px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 96px; 
+}
 }

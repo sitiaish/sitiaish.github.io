@@ -12,6 +12,7 @@ new Vue({
   render: h => h(App),
   mounted() {
     AOS.init({
+      disable: 'mobile',
       offset: 120, // offset (in px) from the original trigger point
       easing: 'ease', // default easing for AOS animations
       once: false, // whether animation should happen only once - while scrolling down

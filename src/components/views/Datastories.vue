@@ -31,25 +31,25 @@
 
       <div class="card">
         <v-row no-gutters align="center" justify="center">
-          <v-col cols="12" sm="5">
+          <v-col cols="12" md="5">
             <div class="card-img-wrapper left" 
               data-aos="fade-right"
               data-aos-ease ="ease"
-              data-aos-duration="1000"
+              data-aos-duration="800"
               data-aos-delay="100">
               <img src="~@/assets/img/index/noodles-1.png" class="card-img left">
             </div>
           </v-col>
 
-          <v-col cols="12" sm="5" offset="1">
-              <div>
-              <p class="text-reference text-center mb-12 text--accent-sand">
+          <v-col cols="12" sm="5" offset-md="1" class="my-12 my-md-0">
+            <div>
+              <p class="text-reference text-center mb-6 mb-md-12 text--accent-sand">
                 <a href="https://kontinentalist.com/stories/we-are-just-that-into-mie-asia-s-obsession-with-instant-noodles" target="_blank">
                 We're just that indo-mie
                 </a>
               </p>  
 
-              <p class="text-body text-center mb-10">
+              <p class="text-body text-center mb-8 mb-md-10">
                 This was my first published data story with Kontinentalist and you never forget your first. It has a soft spot for me because the charts are designed contextually to the story -- we have noodle-strand bar charts, come on! To date, it has the most number of hardcoded charts and graphs per story that I've worked on.
               </p>   
 
@@ -63,15 +63,26 @@
 
       <div class="card">
         <v-row no-gutters align="center" justify="center">
-          <v-col cols="12" sm="5">
+          <v-col cols="12" sm="5" offset="1" order-md="2">
+            <div 
+              class="card-img-wrapper right"
+              data-aos="fade-left"
+              data-aos-ease ="ease"
+              data-aos-duration="800"
+              data-aos-delay="100">
+              <img src="~@/assets/img/index/hajj-1.png" class="card-img right">
+            </div>
+          </v-col> 
+
+          <v-col cols="12" sm="5" order-md="1">
             <div>
-              <p class="text-reference text-center mb-12 text--accent-sand">
+              <p class="text-reference text-center my-6 mb-md-12 mt-md-0 text--accent-sand">
                 <a href="https://kontinentalist.com/stories/what-is-hajj-islam-pilgrimage-to-kaaba-mecca-2020" target="_blank">
                   Inside the sacred hajj pilgrimage
                 </a>
               </p>  
 
-              <p class="text-body text-center mb-10">
+              <p class="text-body text-center mb-8 mb-md-10">
                 The Hajj pilgrimage is a journey that a practicing Muslim makes to the holy city of Mecca. There, the pilgrim travels to different sites to perform the rituals in the Hajj over a period of days. We used maps and photo markers to visualise this journey that brings Muslims from different parts of the world to Mecca during the Hajj season. 
               </p>   
 
@@ -79,18 +90,7 @@
                 <span class="font-weight-bold">Tools: </span> Vue, Mapbox GL JS, Scrollama, D3
               </p>                          
             </div>
-          </v-col>
-
-          <v-col cols="12" sm="5" offset="1">
-            <div 
-              class="card-img-wrapper right"
-              data-aos="fade-left"
-              data-aos-ease ="ease"
-              data-aos-duration="1000"
-              data-aos-delay="100">
-              <img src="~@/assets/img/index/hajj-1.png" class="card-img right">
-            </div>
-          </v-col>            
+          </v-col>           
         </v-row>
       </div>     
 
@@ -104,7 +104,8 @@
             v-for="(item, i) in blocks"
             :key="i + '-blocks'"
             cols="6"
-            md="3"
+            md="4"
+            lg="3"
             class="mb-6 mb-lg-12 text-center">
 
             <div 
@@ -128,8 +129,8 @@
           <strong>other works</strong> with Kontinentalist
         </p>            
         <v-row justify="space-between" align="start">
-          <v-col cols="12" lg="6" class="text-center">
-            <div class="mb-16">
+          <v-col cols="12" md="6" class="text-center mb-12 mb-md-0">
+            <div class="mb-12">
               <p class="text-title mb-4">
                 full bespoke pieces
               </p>
@@ -148,8 +149,8 @@
             </ul>
           </v-col>
 
-          <v-col cols="12" lg="6" class="text-center">
-            <div class="mb-16">
+          <v-col cols="12" md="6" class="text-center">
+            <div class="mb-12">
               <p class="text-title mb-4">
                 partnership projects
               </p>
@@ -174,17 +175,11 @@
     </v-container> 
   </div>
 
-  
-
-
-
- 
   </section>
 </template>
 
 <script>
 import * as d3 from 'd3';
-
 
 export default {
   name: 'SectionDatastories',
@@ -340,6 +335,10 @@ export default {
   height: 250px;
   background-size: cover;
   background-position: center;  
+
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    height: 150px;
+  }  
 }
 
 .overlay {
@@ -370,7 +369,12 @@ export default {
     min-height: 450px;
     width: 100%;
     position: relative;   
-    transition: 2s;             
+    transition: 2s;     
+    
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      height: 200px;
+      min-height: unset;
+    }
 
     &.left {
       background: linear-gradient(90deg, #ff5252 40%, transparent 40%);

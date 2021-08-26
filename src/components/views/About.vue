@@ -11,7 +11,7 @@
 
     <div class="page-about-content">
       <v-container class="px-sm-8 py-0 pa-md-0">  
-        <div class="mb-16 text-center">  
+        <div class="mb-8 mb-lg-16 text-center">  
           <v-row justify="center">
             <v-col cols="12" lg="8">
               <p class="text-section mb-4">
@@ -25,17 +25,17 @@
           </v-row>       
         </div>
 
-        <v-row justify="space-between" align="center">
-          <v-col cols="12" lg="4" offset="1" class="text-center">
-            <img src="~@/assets/img/profilephoto.png" width="100%">            
+        <v-row justify="start" justify-md="center" justify-lg="space-between" align="center" no-gutters>
+          <v-col cols="8" md="6" lg="4" offset-lg="1" class="text-center">
+            <img src="~@/assets/img/code.png" width="100%">            
           </v-col>
 
-          <v-col cols="12" lg="6">
+          <v-col cols="11" md="12" lg="6">
             <p class="text-body font-weight-bold mb-4">
               first job after grad school |
             </p>
 
-            <p class="text-body mb-12">
+            <p class="text-body mb-8 mb-lg-12">
               I am a frontend web developer based in Singapore, specialising in bespoke data storytelling and dataviz design. My current skillset in webdev is a cumulation of self-taught passion projects and in-house work with Kontinentalist❤️.              
             </p>   
 
@@ -43,7 +43,7 @@
               zero-coding till now |
             </p>
 
-            <p class="text-body mb-12">
+            <p class="text-body mb-8 mb-lg-12">
               As someone with almost zero coding background, my transition into webdev wasn't the most funnest of times. But! Because of that I value trying new stuff and being okay with failing. I am open to collaboration on webdev projects :)
             </p>   
 
@@ -51,7 +51,7 @@
               ```stuff here to show im not boring``` |
             </p>
 
-            <p class="text-body mb-16">
+            <p class="text-body mb-8 mb-lg-12">
               When not coding, I can be found in some of the bouldering or highwall gyms -- my foreams are dope. I never go anywhere without my Midori Traveller's Notebook planner + Uniball Signo Ultra Fine 0.28mm. 
             </p>       
 

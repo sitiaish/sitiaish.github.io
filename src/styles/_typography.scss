@@ -13,8 +13,16 @@ $font-secondary: 'Lato', sans-serif;
   font-family: $font-primary;
   color: #2e2e2e;
 
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
+    font-size: 9rem;
+  }  
+
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 3rem;
+    font-size: 7rem;
+  }    
+
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    font-size: 3.2rem;
   }
 }
 

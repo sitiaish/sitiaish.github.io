@@ -3,7 +3,7 @@
     <div 
       v-for="(n) in sections"
       :key="n.sections + '-fixed-dots'"
-      class="dot" 
+      :class="['dot-fixed', 'dot-' + n.section]"
       @mouseenter="handle(n.instructions)"
       @mouseleave="handle('Navigate with any of the three circles there!')"
       @click="jumpSection(n.section)"
@@ -12,8 +12,9 @@
 </template>
 
 <script>
+import * as d3 from "d3-selection";
+
 export default {
-  name: 'Sectionfooter',
   data() {
     return {
       instruction: 'Navigate with any of the three circles there!',
@@ -31,6 +32,9 @@ export default {
     jumpSection(selected) {
       const section = document.querySelectorAll(`.page-${selected}`)[0];
       section.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+
+      d3.selectAll('.dot-fixed').style('background-color', 'white');
+      d3.select(`.dot-fixed.dot-${selected}`).style('background-color', '#DB9480')
     }    
   }
 }
@@ -47,7 +51,15 @@ export default {
   right: 48px;
   transform: translate(0, -50%);
 
-  .dot {
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
+    right: 24px;
+  }  
+
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    right: 8px;
+  }    
+
+  .dot-fixed {
     width: 2rem;
     height: 2rem;
     border: 0.1rem solid #DB9480;
@@ -55,6 +67,13 @@ export default {
     display: block;
     border-radius: 50%;
     margin-bottom: 1.5rem;
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    
 
     &:last-child {
       margin-bottom: 0;

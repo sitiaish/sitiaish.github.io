@@ -1,10 +1,5 @@
 <template>
   <div class="page-landing">
-    <!-- <svg class="background-blob" id="demo" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <path id="path1" fill="rgba(255, 255, 0, 0.7)"></path>
-      <path id="path2" fill="rgba(0, 255, 255, 0.7)"></path>
-      <path id="path3" fill="rgba(255, 0, 255, 0.2)"></path>
-    </svg>       -->
     <v-container fill-height>
       <v-row no-gutters align="center" justify="space-between">
         <v-col cols="8">
@@ -18,7 +13,7 @@
             <div 
               v-for="(n) in sections"
               :key="n.section"
-              class="dot" 
+              :class="['dot', 'dot-' + n.sections]"
               @mouseenter="handle(n.instructions)"
               @mouseleave="handle('Navigate with any of the three circles there!')"
               @click="jumpSection(n.section)"
@@ -33,22 +28,22 @@
         </v-col>
       </v-row>
 
-      <v-row no-gutters align="center" justify="center">           
-        <v-col cols="6">
+      <v-row no-gutters align="center" justify-sm="space-between" justify-md="center">           
+        <v-col cols="12" sm="5" md="8" class="my-12 my-lg-0">
           <div class="landing-prompt"> 
             <img src="@/assets/img/logo.png" alt="logo" width="150px" />
             <div>
-            <p class="text-body mb-0">{{ instruction }}</p>
+              <p class="text-body mb-0" style="width: 200px;">{{ instruction }}</p>
             </div>
           </div>
         </v-col>           
 
-        <v-col cols="3" offset-lg="1">
+        <v-col cols="10" sm="5" md="4" lg="3" offset-lg="1">
           <h2 class="text-title">
             frontend web developer <br> &amp; dataviz designer <br>based in Singapore.
           </h2>  
 
-          <div class="landing-arrow mt-10">
+          <div class="landing-arrow mt-6 mt-lg-10">
             <p class="text-prompt">
               Scroll Down 
               <v-icon class="arrow">mdi-chevron-double-down</v-icon>
@@ -62,7 +57,7 @@
 </template>
 
 <script>
-// import * as d3 from 'd3';
+import * as d3 from "d3-selection";
 
 export default {
   name: 'Landing',
@@ -100,6 +95,9 @@ export default {
     jumpSection(selected) {
       const section = document.querySelectorAll(`.page-${selected}`)[0];
       section.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+
+      d3.selectAll('.dot-fixed').style('background-color', 'white');
+      d3.select(`.dot-fixed.dot-${selected}`).style('background-color', '#DB9480')      
     }    
   }
 }
@@ -107,34 +105,18 @@ export default {
 
 <style lang="scss" scoped>
 .page-landing {
-  min-height: calc(100vh - 64px);
+  // min-height: calc(100vh - 216px);
   display: flex;
   align-items: center;
   position: relative;
+  padding: 96px 0px;
 
-    &:after {
-      content: '';
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background: rgba(242, 243, 245, 0.2);
-      backdrop-filter: blur(10px);    
-    }
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    padding: 65px 4px;
+    padding: 48px 4px;
     // height: calc(100vh); 
   }
 
-  .background-blob {
-    position: absolute;
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-
-  }    
 
   .container {
     z-index: 1;
@@ -162,14 +144,6 @@ export default {
     background-color: #D5C0D2 !important;
     border-radius: unset;
   }
-
-  .landing__vertical {
-    writing-mode: vertical-rl;
-    text-orientation: sideways-right;
-    position: absolute;
-    right: 0; 
-    bottom: 16px;
-  }  
 }
 
 .nav-wrapper {
@@ -244,12 +218,13 @@ export default {
 
 .landing-prompt {
   display: flex;
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    align-items: center;
+  }      
 
   img {
     display: inline-block;
     vertical-align: text-top;
-    position: relative;
-    bottom: -12px;
   }
 }
 

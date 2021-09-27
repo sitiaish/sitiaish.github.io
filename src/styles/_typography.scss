@@ -41,6 +41,21 @@ $font-secondary: 'Lato', sans-serif;
   }
 }
 
+.text-card-1 {
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  color: #2e2e2e;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
 .text-section {
   font-size: 20px;
   line-height: 28px;

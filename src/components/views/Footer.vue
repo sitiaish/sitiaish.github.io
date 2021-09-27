@@ -49,8 +49,8 @@ export default {
         {item: 'mdi-github', link: 'https://github.com/sitiaish/' },
         {item: 'mdi-twitter', link: 'https://twitter.com/teh0prendjak' },
         {item: 'mdi-linkedin', link: 'https://linkedin.com/sitiaish' },
-        {item: 'mdi-email', link: 'sitiaishahaz@gmail.com' },
-
+        {item: 'mdi-web', link: 'https://sitiaish.github.io/' },
+        {item: 'mdi-email', link: 'mailto: sitiaishahaz@gmail.com' },
       ]      
     };
   },

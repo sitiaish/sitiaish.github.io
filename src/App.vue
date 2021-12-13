@@ -1,8 +1,8 @@
 <template>
-  <v-app id="app-wrapper">        
-    <Landing v-intersect="onIntersect" />    
+  <v-app id="app-wrapper">
+    <Landing v-intersect="onIntersect" />
     <About />
-    <Datastories />    
+    <Datastories />
     <Projects />
 
     <NavDots v-show="!isIntersecting" />
@@ -23,17 +23,17 @@ export default {
   components: {
     Landing,
     About,
-    Datastories, 
-    Projects, 
+    Datastories,
+    Projects,
     Footer,
     NavDots,
   },
   data: () => ({
-    isIntersecting: true,  
+    isIntersecting: true,
   }),
   methods: {
-    onIntersect (entries) {
-      this.isIntersecting = entries[0].isIntersecting
+    onIntersect(entries) {
+      this.isIntersecting = entries[0].isIntersecting;
     },
   },
 };
@@ -43,4 +43,3 @@ export default {
 @import 'styles/_grid.scss';
 @import 'styles/_typography.scss';
 </style>
-

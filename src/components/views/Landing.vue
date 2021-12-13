@@ -2,44 +2,36 @@
   <div class="page-landing">
     <v-container fill-height>
       <v-row no-gutters justify="space-between" align="center">
-        <v-col cols="12" md="4" class="text-center text-md-left pa-8">         
+        <v-col cols="12" md="4" class="text-center text-md-left pa-8">
           <img src="@/assets/img/logo.png" alt="logo" width="120px" />
 
-          <h1 class="text-title mb-8">            
-            <span class="text-decoration-underline">Aishah</span> Azmansah <br>
+          <h1 class="text-title mb-8">
+            <span class="text-decoration-underline">Aishah</span> Azmansah
+            <br />
             (she/her)
           </h1>
 
-          <h2 class="text-title mb-4">
-            Frontend webdev <br>&amp; dataviz design           
-          </h2>        
+          <h2 class="text-title mb-4">Frontend webdev <br />&amp; dataviz design</h2>
+
+          <h2 class="text-title mb-4">based in +65</h2>
 
           <h2 class="text-title mb-4">
-            based in +65 
+            currently developing <br />for
+            <a href="https://www.kontinentalist.com" target="_blank">Kontinentalist</a>
           </h2>
-          
-          <h2 class="text-title mb-4">
-            currently developing <br>for <a href="https://www.kontinentalist.com" target="_blank">Kontinentalist</a>
-          </h2>                      
 
-          <div class="landing-arrow mt-6 mt-lg-10 hidden-sm-and-down">
+          <div class="landing-arrow mt-6 mt-lg-10 hidden-sm-and-down" @click="jumpSection('dataviz')">
             <p class="text-prompt">
               lookie here
               <v-icon class="arrow">mdi-chevron-double-down</v-icon>
             </p>
-          </div>               
-        </v-col> 
+          </div>
+        </v-col>
 
-        <v-col cols="12" md="7" class="text-center text-md-left">      
-          <div              
-            data-aos="fade-right"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('about')">
-              about     
-            </h2>
-          </div>             
+        <v-col cols="12" md="7" class="text-center text-md-left">
+          <div data-aos="fade-right" data-aos-ease="ease" data-aos-duration="1800" data-aos-delay="100">
+            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('about')">about</h2>
+          </div>
 
           <!-- <div              
             data-aos="fade-left"
@@ -51,33 +43,21 @@
             </h2>
           </div>    -->
 
-          <div              
-            data-aos="fade-left"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('datastories')">
-              data story
-            </h2>
-          </div>   
+          <div data-aos="fade-left" data-aos-ease="ease" data-aos-duration="1800" data-aos-delay="100">
+            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('datastories')">data story</h2>
+          </div>
 
-          <div              
-            data-aos="fade-right"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-0 font-weight-bold" @click="jumpSection('projects')">
-              afterwork
-            </h2> 
-          </div>                                                    
-        </v-col>         
+          <div data-aos="fade-right" data-aos-ease="ease" data-aos-duration="1800" data-aos-delay="100">
+            <h2 class="text-card mb-0 font-weight-bold" @click="jumpSection('projects')">afterwork</h2>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
-import * as d3 from "d3-selection";
+import * as d3 from 'd3-selection';
 
 export default {
   name: 'Landing',
@@ -85,28 +65,20 @@ export default {
     return {
       instruction: 'Navigate with any of the three circles there!',
       sections: [
-        { instructions: 'Click here to see my work on datastories', section: 'datastories'},
-        { instructions: 'Heyyo! I talk about myself in this section', section: 'about'},
-        { instructions: ' showcase some personal projects that I made in my spare time!', section: 'projects'},
-      ]
-    }
-  },
-  mounted() {
-    // const path1 = d3.select('#path1')
-    // const path2 = d3.select('#path2')
-    // const path3 = d3.select('#path3')
-    // repeat(path1, 'M0 0L100 0L100 40L0 60Z', 'M0 0L100 0L100 30L0 100Z', 10000)
-    // repeat(path2, 'M0 0L100 0L100 20L0 90Z', 'M0 0L100 0L100 90L0 20Z', 11000)
-    // repeat(path3, 'M0 0L100 0L100 70L0 0Z', 'M0 0L100 0L100 20L0 60Z', 12500)
-    // function repeat (path, d1, d2, duration) {
-    //   path.attr('d', d2)
-    //     .transition()
-    //     .attr('d', d1)
-    //     .duration(duration)
-    //     .transition()
-    //     .attr('d', d2)
-    //     .duration(duration)
-    //     .on('end', () => repeat(path, d1, d2, duration))  
+        {
+          instructions: 'Click here to see my work on datastories',
+          section: 'datastories',
+        },
+        {
+          instructions: 'Heyyo! I talk about myself in this section',
+          section: 'about',
+        },
+        {
+          instructions: ' showcase some personal projects that I made in my spare time!',
+          section: 'projects',
+        },
+      ],
+    };
   },
   methods: {
     handle(message) {
@@ -114,13 +86,17 @@ export default {
     },
     jumpSection(selected) {
       const section = document.querySelectorAll(`.page-${selected}`)[0];
-      section.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'start',
+      });
 
       d3.selectAll('.dot-fixed').style('background-color', 'white');
-      d3.select(`.dot-fixed.dot-${selected}`).style('background-color', '#DB9480')      
-    }    
-  }
-}
+      d3.select(`.dot-fixed.dot-${selected}`).style('background-color', '#DB9480');
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -138,7 +114,6 @@ export default {
     padding: 48px 4px;
   }
 
-
   .container {
     z-index: 1;
   }
@@ -151,7 +126,11 @@ export default {
     }
 
     @keyframes bounceY {
-      0%, 20%, 50%, 80%, 100% {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
         transform: translateY(0);
       }
       40% {
@@ -164,7 +143,7 @@ export default {
   }
 
   .landing__button {
-    background-color: #D5C0D2 !important;
+    background-color: #d5c0d2 !important;
     border-radius: unset;
   }
 }
@@ -178,7 +157,7 @@ export default {
   .dot {
     width: 3rem;
     height: 3rem;
-    border: 0.25rem solid #DB9480;
+    border: 0.25rem solid #db9480;
     background-color: white;
     display: block;
     border-radius: 50%;
@@ -206,7 +185,7 @@ export default {
     //   60% {
     //     transform: translateX(-2.5px);
     //   }
-    // }        
+    // }
 
     // @keyframes happy2 {
     //   0%, 20%, 50%, 80%, 100% {
@@ -218,7 +197,7 @@ export default {
     //   60% {
     //     transform: translateX(2.5px);
     //   }
-    // }       
+    // }
   }
 
   .dot:hover {
@@ -227,7 +206,11 @@ export default {
   }
 
   @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
       transform: translateX(5px);
     }
     40% {
@@ -236,14 +219,14 @@ export default {
     60% {
       transform: translateX(-5px);
     }
-  }      
+  }
 }
 
 .landing-prompt {
   display: flex;
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     align-items: center;
-  }      
+  }
 
   img {
     display: inline-block;

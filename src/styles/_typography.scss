@@ -165,7 +165,7 @@ $font-secondary: 'IBM Plex Mono', monospace;
   color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    font-size: 14px;
+    font-size: 13.5px;
     line-height: 16px;
   }
 }

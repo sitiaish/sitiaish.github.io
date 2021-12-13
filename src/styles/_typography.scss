@@ -1,5 +1,12 @@
-$font-primary: 'Nunito', sans-serif;
-$font-secondary: 'Lato', sans-serif;
+// $font-primary: 'Nunito', sans-serif;
+// $font-secondary: 'Lato', sans-serif;
+$font-primary: 'Merriweather', serif;
+// $font-primary: 'Nunito', sans-serif;
+$font-primary: 'IBM Plex Sans', sans-serif;
+
+$font-secondary: 'IBM Plex Mono', monospace;
+
+
 
 .font-secondary {
   font-family: $font-secondary !important;
@@ -7,11 +14,11 @@ $font-secondary: 'Lato', sans-serif;
 
 // typography
 .text-hero {
-  font-size: 12rem;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  font-family: $font-primary;
-  color: #2e2e2e;
+  font-size: 30px;
+  line-height: 78px;
+  font-weight: 400;
+  font-family: $font-secondary;
+  color: #cc3d3f;
 
   @media #{map-get($display-breakpoints, 'md-and-down')} {
     font-size: 9rem;
@@ -27,18 +34,67 @@ $font-secondary: 'Lato', sans-serif;
 }
 
 .text-header {
-  font-size: 48px;
+  font-size: 42px;
   line-height: 48px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-weight: 700;
+  // letter-spacing: 1 px;
   text-transform: uppercase;
-  font-family: $font-primary;
-  color: #2e2e2e;
+  font-family: $font-secondary;
+  color: #cc3d3f;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     font-size: 36px;
     line-height: 36px;
   }
+}
+
+.text-card {
+  font-size: 96px;
+  line-height: 80px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  color: #cc3d3f;
+  transition: -webkit-text-fill-color 2s;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+.text-card:hover {
+  transition: -webkit-text-fill-color 2s;
+  cursor: pointer;
+  color: #cc3d3f;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #cc3d3f;
+}
+
+.text-projects {
+  font-size: 42px;
+  line-height: 76px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  // text-transform: uppercase;
+  font-family: $font-primary;
+  color:black;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.text-card:hover {
+  transition: -webkit-text-fill-color 2s;
+  cursor: pointer;
+  color: #cc3d3f;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #cc3d3f;
 }
 
 .text-card-1 {
@@ -47,7 +103,7 @@ $font-secondary: 'Lato', sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: $font-primary;
+  font-family: $font-secondary;
   color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
@@ -57,11 +113,11 @@ $font-secondary: 'Lato', sans-serif;
 }
 
 .text-section {
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  font-family: $font-primary;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  // letter-spacing: 0.1px;
+  font-family: $font-secondary;
   color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
@@ -73,11 +129,11 @@ $font-secondary: 'Lato', sans-serif;
 .text-title {
   font-size: 18px;
   line-height: 23px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
-  font-family: $font-primary;
-  text-transform: uppercase;
-  color: #2e2e2e;
+  font-family: $font-secondary;
+  // text-transform: uppercase;
+  color: #372B47;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     font-size: 16px;
@@ -90,7 +146,7 @@ $font-secondary: 'Lato', sans-serif;
   line-height: 16px;
   font-weight: 500;
   letter-spacing: 2px;
-  font-family: $font-primary;
+  font-family: $font-secondary;
   text-transform: uppercase;
   color: #2e2e2e;
 
@@ -105,7 +161,7 @@ $font-secondary: 'Lato', sans-serif;
   line-height: 20px;
   font-weight: 500;
   letter-spacing: 1px;
-  font-family: $font-primary;
+  font-family: $font-secondary;
   color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
@@ -114,11 +170,27 @@ $font-secondary: 'Lato', sans-serif;
   }
 }
 
-.text-body {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
+.text-list {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
   font-family: $font-secondary;
+  color: #2e2e2e;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+
+.text-body {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: $font-primary;
   color: #2e2e2e;
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
@@ -129,16 +201,24 @@ $font-secondary: 'Lato', sans-serif;
 
 p > a {
   color: #4A483D !important;
-  border-bottom: 2px solid #B8B8B8;
-  font-family: $font-primary;
+  border-bottom: 1px solid #B8B8B8;
+  font-family: $font-secondary;
   text-decoration: none;
 }
+
+a {
+  color: #cc3d3f !important;
+  border-bottom: 1px solid #B8B8B8;
+  font-family: $font-secondary;
+  text-decoration: none;
+}
+
 
 li > a {
   color: #4A483D !important;
   text-decoration: none;  
 }
 
-.text--accent-sand {
- color: #db9487;
-}
+// .text--accent-sand {
+//  color: #db9487;
+// }

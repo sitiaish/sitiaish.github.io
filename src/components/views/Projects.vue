@@ -7,7 +7,7 @@
       </svg>
     </div>
 
-    <p class="text-header tilt-divider-title mb-12 text--accent-sand">projects</p>
+    <p class="text-header tilt-divider-title mb-12 text--accent-sand">afterwork</p>
 
     <div class="page-projects-content">
       <v-container class="px-sm-8 py-0 pa-md-0">  
@@ -15,82 +15,62 @@
           <v-row justify="center" class="mb-12">
             <v-col cols="12" lg="8">
               <p class="text-section mb-4">
-                <strong>personal projects</strong> that I work on in my free time
+                <strong>personal projects</strong> done outside my 9-to-5
               </p>
-
-              <p class="text-body">
-                I like to experiment with tools that are outside of my 9-5 job. Besides, it's fun to step into the shoes of the designer and the writer to create a project from scratch. I find value in collaborating with people from different fields -- they give me the versaility of adapting my knowledge to their needs. 
-              </p> 
             </v-col>
           </v-row>
-
-          <v-row justify="space-between">
-            <v-col cols="6" lg="3" class="mb-md-8">
-                <p class="text-section mb-2 text-center font-weight-bold">I am sad that B99 is ending</p>
-                <p class="text-body mb-4 text-center">data story</p> 
-                <div @click="openInNewTab('https://titleofmysextape.com/')" class="hover-rotate">      
-                  <img src="@/assets/img/b99.png" width="100%" class="mb-4 thumbnail" />
-                </div>
-                <p class="text-body mb-0 mx-2">
-                  We counted the "cool cool" trains in B99, listed ALL the sex tapes that Jake titled and betted on who won the Wuntch-Holt feud once and for all. 
-                </p>
-            </v-col>
-
-            <v-col cols="6" lg="3" class="mb-md-8">
-              <div @click="openInNewTab('https://sitiaish.github.io/sg-masjid-project/')" class="hover-rotate-1">      
-                <img src="@/assets/img/masjid.png" width="100%" class="mb-4"  />
-              </div>
-
-              <p class="text-section font-weight-bold mb-2">
-                Masjid<sup>2</sup> in Singapore
-              </p>              
-              <p class="text-body mb-4 text-center">data story</p>              
-
-              <p class="text-body mb-6">
-                An in-depth look at all the mosques in Singapore, and how they are administered in the Singapore landscape. 
-              </p>
-            </v-col>  
-
-            <v-col cols="6" lg="3" class="mb-md-8">
-              <div class="mb-12">
-              <p class="text-section font-weight-bold mb-4 text-center">pocoloco.io</p>
-              <div @click="openInNewTab('https://pocoloco.io/')" class="hover-rotate">                
-                <img src="@/assets/img/pocoloco.png" width="100%" class="mb-4" />
-              </div>
-              <p class="text-body mb-0 mx-2">
-                A tool to generate your own moving background gradient. Comes with provided CSS.
-              </p>
-              </div>
-
-              <div>
-              <p class="text-section font-weight-bold mb-4 text-center">Singapore Campaign Posters</p>
-              <div  @click="openInNewTab('https://sitiaish.github.io/sg_campaignposters/')" class="hover-rotate-1">                
-                <img src="@/assets/img/campaign.png" width="100%" class="mb-4" />
-              </div>
-              <p class="text-body mb-0 mx-2">
-                Master in Urban Science, Policy and Planning Final Project. A look at 100+ campaign posters in Singapore's history with data viz. 
-              </p>
-              </div>              
-            </v-col>  
-
-            <!-- <v-col v-for="n in 4" :key="n" cols="6" lg="3" class="mb-md-8 mx-1">
-              <p class="text-card-1 mb-4 text-center">01</p>
-              <img src="@/assets/img/index/cny-1.png" width="100%" class="mb-4" />
-              <p class="text-body mb-0 mx-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tempora, saepe minus sint fuga sequi adipisci atque nobis eveniet vel, quia aliquam odio nihil ea non autem. Blanditiis, quos aperiam?
-              </p>
-            </v-col>                                              -->
-          </v-row>       
         </div>
+
+        <div v-if="$vuetify.breakpoint.mdAndUp">
+          <p class="text-projects text-center">
+            <span class="project-title"><a href="https://titleofmysextape.com" target="_blank">Brooklyn 99 tribute.</a> </span>
+            <img src="@/assets/img/b99.png" height="120px" class="thumbnail mr-8 mb-6" />
+
+            <span class="project-title"><a href="https://sitiaish.github.io/sg-masjid-project/" target="_blank">Mosques in S'pore.</a> </span>
+            <img src="@/assets/img/masjid.png" height="120px" class="thumbnail mr-8 mb-6" />
+          
+            <span class="project-title"><a href="https://sitiaish.github.io/sg_campaignposters/" target="_blank">Many S'pore campaign posters.</a> </span>
+            <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mr-8 mb-6" /><br>
+
+            <span class="project-title"><a href="https://pocoloco.io" target="_blank">Pocoloco.io. </a></span>
+            <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mr-8 mb-6" />              
+          </p>            
+        </div>
+
+          <div v-if="$vuetify.breakpoint.smAndDown">
+            <p class="text-projects text-center">Brooklyn 99 tribute.</p>
+              <img src="@/assets/img/b99.png" height="120px" class="thumbnail mb-6" />
+
+            <p class="text-projects text-center">Mosques in S'pore. </p>
+              <img src="@/assets/img/masjid.png" height="120px" class="thumbnail mb-6" />
+
+            <p class="text-projects text-center">Many S'pore campaign posters. </p>
+              <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mb-6" /><br>
+
+            <p class="text-projects text-center">Pocoloco.io</p>
+              <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mb-6" />              
+          </div>        
       </v-container> 
     </div>
+
+    <v-container>
+      <p class="text-body text-center">
+        And finally, here is a dataviz of all the data visualisation work that I did with Kontinentalist :)
+      </p>
+      <VizDataviz />
+    </v-container>
 
   </section>
 </template>
 
 <script>
+import VizDataviz from '@/components/views/VizDataviz.vue';
+
 export default {
   name: 'Sectionprojects',
+  components: {
+    VizDataviz,
+  },
   methods: {
     openInNewTab(url) {
       window.open(url, '_blank').focus();
@@ -103,7 +83,7 @@ export default {
 <style lang="scss" scoped>
  .page-projects {
   background: rgb(242,243,245);
-  background: linear-gradient(180deg, #f6f7f1 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(180deg, #FEF5FF 0%, white 100%);
   position: relative;
 
   .page-projects-content {
@@ -150,6 +130,37 @@ export default {
 .hover-rotate-1:hover img {
   transform: scale(1.25) rotate(-5deg);
   cursor: pointer;
+}
+
+.project-title {
+  padding: 0 4px;
+  transition: all 0.3s;
+}
+
+.thumbnail {
+  display: inline-block;
+  vertical-align: middle;
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    display:block;
+    margin: 0 auto;
+    vertical-align: unset;
+  }
+
+}
+
+.project-title {
+  a {
+    border-bottom: none;
+  }
+}
+
+.project-title:hover {
+  cursor: pointer;
+  background-color: #cc3d3f;
+  a {
+    color: #fff9f4 !important;
+  }
 }
 </style>
 

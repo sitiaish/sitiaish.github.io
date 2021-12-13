@@ -1,77 +1,57 @@
 <template>
   <div class="page-landing">
     <v-container fill-height>
-      <v-row no-gutters justify="space-between" align="center">
-        <v-col cols="12" md="4" class="text-center text-md-left pa-8">         
-          <img src="@/assets/img/logo.png" alt="logo" width="120px" />
-
-          <h1 class="text-title mb-8">            
-            <span class="text-decoration-underline">Aishah</span> Azmansah <br>
-            (she/her)
+      <v-row no-gutters align="center" justify="space-between">
+        <v-col cols="8">
+          <h1 class="text-hero">
+            AISHAH
           </h1>
-
-          <h2 class="text-title mb-4">
-            Frontend webdev <br>&amp; dataviz design           
-          </h2>        
-
-          <h2 class="text-title mb-4">
-            based in +65 
-          </h2>
-          
-          <h2 class="text-title mb-4">
-            currently developing <br>for <a href="https://www.kontinentalist.com" target="_blank">Kontinentalist</a>
-          </h2>                      
-
-          <div class="landing-arrow mt-6 mt-lg-10 hidden-sm-and-down">
-            <p class="text-prompt">
-              lookie here
-              <v-icon class="arrow">mdi-chevron-double-down</v-icon>
-            </p>
-          </div>               
         </v-col> 
 
-        <v-col cols="12" md="7" class="text-center text-md-left">      
-          <div              
-            data-aos="fade-right"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('about')">
-              about     
-            </h2>
-          </div>             
+        <v-col cols="1">
+          <div class="nav-wrapper">
+            <div 
+              v-for="(n) in sections"
+              :key="n.section"
+              :class="['dot', 'dot-' + n.sections]"
+              @mouseenter="handle(n.instructions)"
+              @mouseleave="handle('Navigate with any of the three circles there!')"
+              @click="jumpSection(n.section)"
+            />
+          </div>        
+        </v-col>
 
-          <!-- <div              
-            data-aos="fade-left"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('datastories')">
-              maps     
-            </h2>
-          </div>    -->
-
-          <div              
-            data-aos="fade-left"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-6 font-weight-bold" @click="jumpSection('datastories')">
-              data story
-            </h2>
-          </div>   
-
-          <div              
-            data-aos="fade-right"
-            data-aos-ease ="ease"
-            data-aos-duration="1800"
-            data-aos-delay="100">
-            <h2 class="text-card mb-0 font-weight-bold" @click="jumpSection('projects')">
-              afterwork
-            </h2> 
-          </div>                                                    
-        </v-col>         
+        <v-col cols="3">
+          <h1 class="text-hero text-right">
+            AZ
+          </h1>          
+        </v-col>
       </v-row>
+
+      <v-row no-gutters align="center" justify-sm="space-between" justify-md="center">           
+        <v-col cols="12" sm="5" md="8" class="my-12 my-lg-0">
+          <div class="landing-prompt"> 
+            <img src="@/assets/img/logo.png" alt="logo" width="150px" />
+            <div>
+              <p class="text-body mb-0" style="width: 200px;">{{ instruction }}</p>
+            </div>
+          </div>
+        </v-col>           
+
+        <v-col cols="10" sm="5" md="4" lg="3" offset-lg="1">
+          <h2 class="text-title">
+            frontend web developer <br> &amp; dataviz designer <br>based in Singapore.
+          </h2>  
+
+          <div class="landing-arrow mt-6 mt-lg-10">
+            <p class="text-prompt">
+              Scroll Down 
+              <v-icon class="arrow">mdi-chevron-double-down</v-icon>
+            </p>
+          </div>  
+        </v-col>                 
+      </v-row>
+
     </v-container>
   </div>
 </template>
@@ -125,17 +105,16 @@ export default {
 
 <style lang="scss" scoped>
 .page-landing {
-  height: calc(100vh);
+  // min-height: calc(100vh - 216px);
   display: flex;
   align-items: center;
   position: relative;
   padding: 96px 0px;
-  // background-color: #372B47;
-  background: #fff9f4;
-  color: white !important;
+
 
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     padding: 48px 4px;
+    // height: calc(100vh); 
   }
 
 
@@ -144,8 +123,6 @@ export default {
   }
 
   .landing-arrow {
-    cursor: pointer;
-
     .arrow {
       animation: bounceY 2s infinite;
     }

@@ -49,7 +49,7 @@ export default {
         {item: 'mdi-github', link: 'https://github.com/sitiaish/' },
         {item: 'mdi-twitter', link: 'https://twitter.com/teh0prendjak' },
         {item: 'mdi-linkedin', link: 'https://linkedin.com/sitiaish' },
-        {item: 'mdi-web', link: 'https://sitiaish.github.io/' },
+        // {item: 'mdi-web', link: 'https://sitiaish.github.io/' },
         {item: 'mdi-email', link: 'mailto: sitiaishahaz@gmail.com' },
       ]      
     };
@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
  .page-footer {
-  background: #f6f7f1;
+  background: #FFF9F4;
   // background: linear-gradient(180deg, rgba(242,243,245,1) 0%, rgba(255,255,255,1) 100%);
   position: relative;
 
@@ -71,7 +71,7 @@ export default {
 
  
 .footer-wrapper {
-  background: #f6f7f1;
+  background: #fff9f4;
   // background: linear-gradient(180deg, rgba(242,243,245,1) 0%, rgba(255,255,255,1) 100%);
   position: relative;
   height: 400px;

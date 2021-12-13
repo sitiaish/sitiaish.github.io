@@ -1,8 +1,8 @@
 <template>
   <v-app id="app-wrapper">        
     <Landing v-intersect="onIntersect" />    
-    <Datastories />    
     <About />
+    <Datastories />    
     <Projects />
 
     <NavDots v-show="!isIntersecting" />

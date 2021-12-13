@@ -1,13 +1,14 @@
 <template>
   <div class="nav-wrapper">
-    <div 
+    <!-- <div 
       v-for="(n) in sections"
       :key="n.sections + '-fixed-dots'"
       :class="['dot-fixed', 'dot-' + n.section]"
       @mouseenter="handle(n.instructions)"
       @mouseleave="handle('Navigate with any of the three circles there!')"
       @click="jumpSection(n.section)"
-    />
+    /> -->
+    <v-icon @click="jumpSection('landing')" color="#cc3d3f" class="dot" style="font-size: 48px">mdi-arrow-up-circle-outline</v-icon>
   </div>      
 </template>
 
@@ -26,9 +27,9 @@ export default {
     }
   },
   methods: {
-    handle(message) {
-      this.instruction = message;
-    },
+    // handle(message) {
+    //   this.instruction = message;
+    // },
     jumpSection(selected) {
       const section = document.querySelectorAll(`.page-${selected}`)[0];
       section.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
@@ -47,9 +48,10 @@ export default {
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 50%;
+  bottom: 30%;
+  z-index: 10;
   right: 48px;
-  transform: translate(0, -50%);
+  transform: translate(0, -30%);
 
   @media #{map-get($display-breakpoints, 'md-and-down')} {
     right: 24px;

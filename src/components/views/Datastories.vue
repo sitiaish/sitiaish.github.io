@@ -7,24 +7,35 @@
     </svg>
   </div>
 
-  <p class="text-header tilt-divider-title mb-12 text--accent-sand">Data stories</p>
+  <p class="text-header tilt-divider-title mb-12 text--accent-sand">Data story</p>
 
   <div class="page-datastories-content">
     <v-container class="px-sm-8 py-0 pa-md-0">  
       <div class="mb-16 text-center">  
         <v-row justify="center">
-          <v-col cols="12" lg="8">
-            <p class="text-section mb-4">
-              <strong>selected</strong> data-storytelling projects that I've coded
+          <v-col cols="12" lg="7">
+            <p class="text-section mb-6">
+              <strong>selected</strong> data stories that I've coded
             </p>
 
-            <p class="text-body">
-              But first, what's a <em>data story</em> anyway? They're simply editorials that use compelling visuals like illustrations and data visualisations (think: charts, maps and graphs) to convey the story to the reader. 
-            </p> 
+            <div v-click-outside="handleClose">
+              <v-btn outlined elevation="0" color="#cc3d3f" class="py-5 px-2" @click="embed = !embed">
+                <span class="text-prompt mr-2">data story</span>
+                <v-icon color="#cc3d3f" style="font-size: 20px">mdi-help-circle</v-icon>
+              </v-btn>
 
-            <p class="text-body">
-              As digital pieces, these are stories are created to be interactive and responsive -- accessible across all devices (desktop, tablet, mobile).
-            </p>
+              <transition name="block">
+                <div class="pa-4 mt-4 code-block" v-show="embed">
+                  <p class="text-body">
+                    What's a <em>data story</em> anyway? <br>They're simply editorials that use compelling visuals like illustrations and data visualisations (think: charts, maps and graphs) to convey the story to the reader. 
+                  </p> 
+
+                  <p class="text-body mb-0">
+                    As digital pieces, these are stories are created to be interactive and responsive -- accessible across all devices (desktop, tablet, mobile).
+                  </p>                  
+                </div>
+              </transition>
+            </div>            
           </v-col>
         </v-row>       
       </div>
@@ -41,20 +52,20 @@
             </div>
           </v-col>
 
-          <v-col cols="12" sm="5" offset-md="1" class="my-12 my-md-0">
+          <v-col cols="12" sm="6" class="pl-md-12 my-12 my-md-0">
             <div>
-              <p class="text-reference text-center mb-6 mb-md-12 text--accent-sand">
+              <p class="text-body font-weight-bold mb-6 mb-md-8">
                 <a href="https://kontinentalist.com/stories/we-are-just-that-into-mie-asia-s-obsession-with-instant-noodles" target="_blank">
                 We're just that indo-mie
                 </a>
               </p>  
 
-              <p class="text-body text-center mb-8 mb-md-10">
-                This was my first published data story with Kontinentalist and you never forget your first. It has a soft spot for me because the charts are designed contextually to the story -- we have noodle-strand bar charts, come on! To date, it has the most number of hardcoded charts and graphs per story that I've worked on.
+              <p class="text-body mb-8 mb-md-10">
+                Inagural piece with Kontinentalist! The charts here are designed contextually to the story with the likes of noodle-strand bar charts. To date, it has the most number of hardcoded charts and graphs per story that I've worked on.
               </p>   
 
-              <p class="text-prompt text-center mb-0">
-                <span class="font-weight-bold">Tools: </span> Vue, D3
+              <p class="text-prompt mb-0">
+                Tools: Vue, D3
               </p>                          
             </div>
           </v-col>
@@ -63,7 +74,7 @@
 
       <div class="card">
         <v-row no-gutters align="center" justify="center">
-          <v-col cols="12" sm="5" offset="1" order-md="2">
+          <v-col cols="12" sm="5" order-md="2">
             <div 
               class="card-img-wrapper right"
               data-aos="fade-left"
@@ -74,20 +85,21 @@
             </div>
           </v-col> 
 
-          <v-col cols="12" sm="5" order-md="1">
+          <v-col cols="12" sm="6" class="pr-12">
             <div>
-              <p class="text-reference text-center my-6 mb-md-12 mt-md-0 text--accent-sand">
+              <p class="text-body font-weight-bold my-6 mb-md-8 mt-md-0 text--accent-sand">
                 <a href="https://kontinentalist.com/stories/what-is-hajj-islam-pilgrimage-to-kaaba-mecca-2020" target="_blank">
                   Inside the sacred hajj pilgrimage
                 </a>
               </p>  
 
-              <p class="text-body text-center mb-8 mb-md-10">
-                The Hajj pilgrimage is a journey that a practicing Muslim makes to the holy city of Mecca. There, the pilgrim travels to different sites to perform the rituals in the Hajj over a period of days. We used maps and photo markers to visualise this journey that brings Muslims from different parts of the world to Mecca during the Hajj season. 
+              <p class="text-body mb-8 mb-md-10">
+                Scrolly-driven maps to showcase how Muslims in Southeast Asia travel <i>to</i> Makkah +
+                point-and-click maps to visualise the hajj journey Muslims undertake whilst <i>in</i> Makkah
               </p>   
 
-              <p class="text-prompt text-center mb-0">
-                <span class="font-weight-bold">Tools: </span> Vue, Mapbox GL JS, Scrollama, D3
+              <p class="text-prompt mb-0">
+                Tools: Vue, Mapbox GL JS, Scrollama, D3
               </p>                          
             </div>
           </v-col>           
@@ -128,50 +140,68 @@
         <p class="text-section mb-16 text-center">
           <strong>other works</strong> with Kontinentalist
         </p>            
-        <v-row justify="space-between" align="start">
-          <v-col cols="12" md="6" class="text-center mb-12 mb-md-0">
+        <v-row no-gutters justify="center" align="start">
+          <v-col cols="12" md="5" class="mb-12 mb-md-0">
             <div class="mb-12">
-              <p class="text-title mb-4">
-                full bespoke pieces
+              <p class="text-title text-center mb-4">
+                Bespoke pieces
               </p>
 
-              <ul v-for="(n, i) in bespoke" :key="i + '-hardcoded'" class="project-list text-center">
+              <ul v-for="(n, i) in bespoke" :key="i + '-hardcoded'" class="project-list text-left">
                 <li class="text-body mb-2"><a :href="n.link" target="_blank">{{ n.story }}</a></li>
               </ul>
             </div>
 
-            <p class="text-title mb-4">
-              stand-alone dataviz
+            <p class="text-title text-center mb-4">
+              Stand-alone dataviz
             </p>
 
-            <ul v-for="(n, i) in viz" :key="i + '-viz'" class="project-list text-center">
+            <ul v-for="(n, i) in viz" :key="i + '-viz'" class="project-list text-left">
               <li class="text-body mb-2"><a :href="n.link" target="_blank">{{ n.story }}</a></li>
             </ul>
           </v-col>
 
-          <v-col cols="12" md="6" class="text-center">
+          <v-col cols="12" offset-md="1" md="5">
             <div class="mb-12">
-              <p class="text-title mb-4">
-                partnership projects
+              <p class="text-title text-center mb-4">
+                Partnership projects
               </p>
 
-              <ul v-for="(n, i) in partnerships" :key="i + '-partnerships'" class="project-list text-center">
+              <ul v-for="(n, i) in partnerships" :key="i + '-partnerships'" class="project-list text-left">
                 <li class="text-body mb-2"><a :href="n.link" target="_blank">{{ n.story }}</a></li>
               </ul>
             </div>
 
-            <p class="text-title mb-4">
-              client projects
+            <p class="text-title text-center mb-4">
+              Client projects
             </p>
 
-            <ul v-for="(n, i) in client" :key="i + '-client'" class="project-list text-center">
+            <ul v-for="(n, i) in client" :key="i + '-client'" class="project-list text-left">
               <li class="text-body mb-2"><a :href="n.link" target="_blank">{{ n.story }}</a></li>
-            </ul>            
+            </ul>  
+
+            <p class="text-title text-center mt-12 mb-4">
+              Talks and Workshops
+            </p>
+            
+            <ul class="project-list text-left">
+              <li class="text-body mb-3">
+                04/2021: SUTD HASS02.526 Interactive Data Visualisation  — <i>Creating an immersive experience for social impact</i>
+              </li>
+
+              <li class="text-body mb-3">
+                09/2021: Creating Narratives for Change Festival 2021  — <i>Data Powered Narratives </i>
+              </li>
+
+              <li class="text-body mb-3">
+                11/2021: The Wrangler by The Brown Institute  — <i>Using spatial data for communication and investigation</i>
+              </li>
+            </ul>                       
           </v-col>
 
                        
         </v-row>           
-      </div>
+      </div>   
     </v-container> 
   </div>
 
@@ -203,14 +233,15 @@ export default {
   },  
   data() {
     return {
+      embed: false,
       blocks: [
         {src: "bicen-1.gif", link: "https://kontinentalist.com/stories/singapore-bicentennial-colonial-history-19th-century-data", description: "A series on Sg's Bicentennial history visualised with scrolly-triggered charts", title: 'What was Singapore like 100 years ago? The Series'},
         {src: "birdlife-1.png", link:"https://kontinentalist.com/stories/spoon-billed-sandpiper-migratory-bird-conservation-yellow-sea-map", description: "Interactive map-based story with line animations following a birb :>", title: 'Born to fly: The life, journey, and trials of a migratory bird'},
-        {src: "lhl-1.png", link: "https://kontinentalist.com/stories/pm-lee-hsien-loong-speech-address-shirts", description:"PM Lee's shirt colors chart", title: 'PM Lee and his shirt colors'},
+        {src: "lhl-1.png", link: "https://kontinentalist.com/stories/pm-lee-hsien-loong-speech-address-shirts", description:"S'pore Prime Minister Lee's shirt colors chart", title: 'PM Lee and his shirt colors'},
         {src: "cny-1.png", link: "https://kontinentalist.com/stories/2020-chinese-zodiac-horoscope-predictions-based-on-data", description:"Feat. force diagrams on CNY predictions and a check-yo'-fortunes custom filter", title: 'Huat Oxes, Suay Dragons: Zodiac predictions in the year of the Rat'},
         {src: "cny-2.png", link:"https://kontinentalist.com/stories/2020-chinese-zodiac-horoscope-predictions-based-on-data", description:"Bee swarm chart with zodiac signs", title: 'Huat Oxes, Suay Dragons: Zodiac predictions in the year of the Rat'},
-        {src: "covid-1.png", link: "https://kontinentalist.com/stories/singapore-coronavirus-cases-spread-connections", description:"Covid timeline-headlines", title: 'How has Singapore responded to COVID-19?'},
-        {src: "covid-2.png", link:"https://kontinentalist.com/stories/singapore-response-wuhan-coronavirus-timeline", description:"Covid force clusters", title: "How are Singapore's COVID-19 cases related?"},   
+        {src: "covid-1.png", link: "https://kontinentalist.com/stories/singapore-coronavirus-cases-spread-connections", description:"Timeline of Covid-19 related headlines from the news headlines in S'pore", title: 'How has Singapore responded to COVID-19?'},
+        {src: "covid-2.png", link:"https://kontinentalist.com/stories/singapore-response-wuhan-coronavirus-timeline", description:"A force-directed chart of initial Covid-19 cases in S'pore", title: "How are Singapore's COVID-19 cases related?"},   
         {src: "love-1.png", link: "https://kontinentalist.com/stories/the-things-we-queued-for", description:"What Singaporeans love queueing for - in charts", title: 'The things we queued for'},
       ],
       hardcoded: [
@@ -287,11 +318,35 @@ export default {
         "type": "client"
       },
       {
+        "story": "What do modern martial arts practised in Asia have in common?",
+        "link": "https://kontinentalist.com/stories/the-history-of-traditional-and-mixed-martial-arts-in-asia",
+        "end": "",
+        "type": "viz"
+      },               
+      {
+        "story": "FES in Asia Interactive Map: Social-ecological transformation in cities in Asia",
+        "link": "https://asia.fes.de/fes-map/#/",
+        "end": "",
+        "type": "client"
+      },      
+      {
+        "story": "Sexual violence in Singapore: a crisis",
+        "link": "https://kontinentalist.com/stories/sexual-assault-and-abuse-in-singapore-need-more-than-the-law",
+        "end": "",
+        "type": "partnerships"
+      },         
+      {
         "story": "Hepatitis C is Asia's silent emergency",
         "link": "https://cdn-images.kontinentalist.com/static-html/ari-network-project/final-02/index.html",
         "end": "",
         "type": "partnerships"
       },
+      {
+        "story": "GCC’s Changing Climate: A Quantified History of the Last 4 Decades",
+        "link": "https://aeon.kontinentalist.studio/",
+        "end": "",
+        "type": "client"
+      },       
       ]     
     };
   },
@@ -309,7 +364,9 @@ export default {
       });
   },
   methods: {
-
+    handleClose() {
+      this.embed ? (this.embed = false) : '';
+    },
   }
 }
 </script>
@@ -317,8 +374,8 @@ export default {
 
 <style lang="scss" scoped>
  .page-datastories {
-  background: rgb(242,243,245);
-  background: linear-gradient(180deg, #f6f7f1 0%, rgba(255,255,255,1) 100%);
+  background: #fff9f4;
+  background: linear-gradient(180deg,  #F5FFF5 0%, white 100%);
   position: relative;
 
   .page-datastories-content {
@@ -332,7 +389,7 @@ export default {
 .datastories__brick {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 260px;
   background-size: cover;
   background-position: center;  
 
@@ -349,8 +406,8 @@ export default {
   justify-content: center;
   position: absolute;
   background: linear-gradient(
-    rgba(230, 141, 124, 0.5),
-    rgba(230, 141, 124, 0.5)
+    rgba(204, 61, 63, 0.7),
+    rgba(204, 61, 63, 0.7)
   );  
 
   p {
@@ -426,18 +483,97 @@ export default {
   list-style-type: none;
 
   li {
-    opacity: 0.7;
-    cursor: pointer;
-    transition: 0.2s;
+    a {
+      cursor: pointer;
+      transition: 0.2s;
 
     &:hover {
-      opacity: 1;
+      color: #fff9f4 !important;
+      background-color: #cc3d3f;
+    }
+
     }
 
     &:last-child {
       margin-bottom: 0;
     }    
   }
-}    
+}  
+
+
+input.embed-code {
+  border: 1px solid #343768;
+  padding: 4px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.code-block {
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  list-style-type: none;
+  transform-origin: top;
+  text-align: left;
+  border-left: 1px solid #cc3d3f;
+}
+
+.block-enter {
+  opacity: 0;
+  max-height: 350px;
+  transform: scaleY(0);
+}
+
+.block-enter-active {
+  animation: slide-in 0.3s ease-out forwards;
+}
+
+.block-leave {
+  opacity: 1;
+  max-height: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+}
+
+.block-leave-active {
+  animation: slide-out 0.3s ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    max-height: 0;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    max-height: 350px;
+    transform: scaleY(100%);
+
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    max-height: 350px;
+    transform: scaleY(100%);
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+// .tilt-divider .shape-fill {
+//   fill: #fff9f4 !important; 
+// }
+
+a:hover {
+  cursor: pointer;
+  background-color: #cc3d3f;
+  color: #fff9f4 !important;
+}
 </style>
 

@@ -35,25 +35,39 @@
                 >Many S'pore campaign posters.</a
               >
             </span>
-            <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mr-8 mb-6" /><br />
+            <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mr-8 mb-6" />
 
             <span class="project-title"><a href="https://pocoloco.io" target="_blank">Pocoloco.io. </a></span>
             <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mr-8 mb-6" />
+
+            <span class="project-title"><a href="https://bai-bella.netlify.app/" target="_blank">Bai Bella. </a></span>
+            <img src="@/assets/img/bella.png" height="120px" class="thumbnail mr-8 mb-6" /><br />
           </p>
         </div>
 
         <div v-if="$vuetify.breakpoint.smAndDown">
-          <p class="text-projects text-center">Brooklyn 99 tribute.</p>
+          <p class="text-projects text-center">
+            <a href="https://titleofmysextape.com" target="_blank">Brooklyn 99 tribute.</a>
+          </p>
           <img src="@/assets/img/b99.png" height="120px" class="thumbnail mb-6" />
 
-          <p class="text-projects text-center">Mosques in S'pore.</p>
+          <p class="text-projects text-center">
+            <a href="https://sitiaish.github.io/sg-masjid-project/" target="_blank">Mosques in S'pore.</a>
+          </p>
           <img src="@/assets/img/masjid.png" height="120px" class="thumbnail mb-6" />
 
-          <p class="text-projects text-center">Many S'pore campaign posters.</p>
+          <p class="text-projects text-center">
+            <a href="https://sitiaish.github.io/sg_campaignposters/" target="_blank">Many S'pore campaign posters.</a>
+          </p>
           <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mb-6" /><br />
 
-          <p class="text-projects text-center">Pocoloco.io</p>
+          <p class="text-projects text-center"><a href="https://pocoloco.io" target="_blank">Pocoloco.io</a></p>
           <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mb-6" />
+
+          <p class="text-projects text-center">
+            <a href="https://bai-bella.netlify.app/" target="_blank">Bai Bella</a>
+          </p>
+          <img src="@/assets/img/bella.png" height="120px" class="thumbnail mb-6" />
         </div>
       </v-container>
     </div>
@@ -62,9 +76,7 @@
       <p class="text-body text-center page-dataviz mb-8">
         And finally, here is a <i>dataviz of all the data visualisation work</i> that I did with Kontinentalist :3
       </p>
-      <p class="text-reference mb-6 text-center page-dataviz">
-        How to read the chart and stuffs
-      </p>      
+      <p class="text-reference mb-6 text-center page-dataviz">How to read the chart and stuffs</p>
       <v-row no-gutters justify="center">
         <v-col cols="5" md="3">
           <p class="text-reference text-center font-weight-light">Complexity <br /></p>
@@ -101,17 +113,95 @@ export default {
     d3.select('#legend-1').attr('width', 300).attr('height', 300).call(this.responsivefy);
     const rc = rough.svg(legend1);
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' })).classList.add('base-1');
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-1');
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' })).classList.add('base-2')
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-2');
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#fb6239', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' })).classList.add('base-2-1')  
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#fb6239', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-2-1');
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 1, fillWeight: 3, stroke: 'transparent' })).classList.add('base-3')
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 1, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-3');
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#fb6239', fillStyle: 'zigzag', roughness: 3, fillWeight: 3, stroke: 'transparent' })).classList.add('base-3-1')  
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#fb6239', fillStyle: 'zigzag', roughness: 3, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-3-1');
 
-    legend1.appendChild(rc.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#d81e5b', fillStyle: 'cross-hatch', roughness: 5, fillWeight: 3, stroke: 'transparent' })).classList.add('base-3-2')  
+    legend1
+      .appendChild(
+        rc.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#d81e5b', fillStyle: 'cross-hatch', roughness: 5, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('base-3-2');
 
     d3.select('g.base-1').attr('transform', 'scale(0.8)');
 
@@ -122,15 +212,23 @@ export default {
     d3.selectAll('g.base-3-1').attr('transform', 'scale(0.65) translate(28, 260) rotate(25)');
     d3.selectAll('g.base-3-2').attr('transform', 'scale(0.5) translate(35, 410) rotate(-20)');
 
-
-    d3.select('#legend-1').append('text').attr('text-anchor', 'middle').attr('transform', 'translate(175, 50)')
+    d3.select('#legend-1')
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(175, 50)')
       .text('Meh easy, chill story');
 
-    d3.select('#legend-1').append('text').attr('text-anchor', 'middle').attr('transform', 'translate(185, 150)')
-      .text('Whoa, getting harder');    
+    d3.select('#legend-1')
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(185, 150)')
+      .text('Whoa, getting harder');
 
-    d3.select('#legend-1').append('text').attr('text-anchor', 'middle').attr('transform', 'translate(185, 250)')
-      .text('GAH this monstrosity!!'); 
+    d3.select('#legend-1')
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(185, 250)')
+      .text('GAH this monstrosity!!');
 
     // legend 2
     const legend2 = document.getElementById('legend-2');
@@ -141,9 +239,22 @@ export default {
 
     // d3.select('g.circle').attr('transform', 'translate(40, 150)');
 
-    legend2.appendChild(rc2.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: 'none', fillStyle: 'solid', roughness: 1, fillWeight: 3, stroke: 'black' })).classList.add('cardinal');
+    legend2
+      .appendChild(
+        rc2.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: 'none', fillStyle: 'solid', roughness: 1, fillWeight: 3, stroke: 'black' }
+        )
+      )
+      .classList.add('cardinal');
 
-    const cardinalTools =  d3.select('g.cardinal');
+    const cardinalTools = d3.select('g.cardinal');
     cardinalTools.attr('transform', 'translate(70, 25)');
     cardinalTools.append('text').attr('text-anchor', 'middle').text('Mapbox').attr('transform', 'translate(80, 0)');
     cardinalTools.append('text').attr('text-anchor', 'middle').text('Scrolly').attr('transform', 'translate(160, 60)');
@@ -155,19 +266,64 @@ export default {
     d3.select('#legend-3').attr('width', 300).attr('height', 300).call(this.responsivefy);
     const rc3 = rough.svg(legend3);
 
-    legend3.appendChild(rc3.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' })).classList.add('internal');
+    legend3
+      .appendChild(
+        rc3.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 3, stroke: 'transparent' }
+        )
+      )
+      .classList.add('internal');
 
-    legend3.appendChild(rc3.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 2, stroke: 'transparent' })).classList.add('external');
+    legend3
+      .appendChild(
+        rc3.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 2, fillWeight: 2, stroke: 'transparent' }
+        )
+      )
+      .classList.add('external');
 
-    legend3.appendChild(rc3.polygon([[80, 10], [130 , 60], [80, 110], [30, 60], [80, 10]], { fill: '#ffa600', fillStyle: 'zigzag', roughness: 1, fillWeight: 1, strokeWidth: 5, stroke: '#C6D8D3' })).classList.add('external')
+    legend3
+      .appendChild(
+        rc3.polygon(
+          [
+            [80, 10],
+            [130, 60],
+            [80, 110],
+            [30, 60],
+            [80, 10],
+          ],
+          { fill: '#ffa600', fillStyle: 'zigzag', roughness: 1, fillWeight: 1, strokeWidth: 5, stroke: '#C6D8D3' }
+        )
+      )
+      .classList.add('external');
 
     d3.select('g.internal').attr('transform', 'scale(1)');
     d3.selectAll('g.external').attr('transform', 'scale(1) translate(0, 120)');
 
-    d3.select('g.internal').append('text').attr('text-anchor', 'middle').attr('transform', 'translate(210, 70)')
+    d3.select('g.internal')
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(210, 70)')
       .text('with clients/partners');
 
-    d3.select('g.external').append('text').attr('text-anchor', 'middle').attr('transform', 'translate(210, 70)')
+    d3.select('g.external')
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('transform', 'translate(210, 70)')
       .text('Konti exclusive story');
   },
   methods: {
@@ -192,7 +348,7 @@ export default {
 
       svg.attr('width', w);
       svg.attr('height', Math.round(w / aspect));
-    },    
+    },
   },
 };
 </script>

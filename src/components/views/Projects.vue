@@ -20,10 +20,12 @@
 
         <div v-if="$vuetify.breakpoint.mdAndUp">
           <p class="text-projects text-center">
-            <span class="project-title"
-              ><a href="https://titleofmysextape.com" target="_blank">Brooklyn 99 tribute.</a>
+            <span class="project-title"><a href="https://pocoloco.io" target="_blank">Pocoloco.io. </a></span>
+            <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mr-8 mb-6" />
+            <!-- <span class="project-title"
+              ><a href="https://sitiaish.github.io/b99" target="_blank">Brooklyn 99 tribute.</a>
             </span>
-            <img src="@/assets/img/b99.png" height="120px" class="thumbnail mr-8 mb-6" />
+            <img src="@/assets/img/b99.png" height="120px" class="thumbnail mr-8 mb-6" /> -->
 
             <span class="project-title"
               ><a href="https://sitiaish.github.io/sg-masjid-project/" target="_blank">Mosques in S'pore.</a>
@@ -37,19 +39,21 @@
             </span>
             <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mr-8 mb-6" />
 
-            <span class="project-title"><a href="https://pocoloco.io" target="_blank">Pocoloco.io. </a></span>
-            <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mr-8 mb-6" />
-
-            <span class="project-title"><a href="https://bai-bella.netlify.app/" target="_blank">Bai Bella. </a></span>
+            <span class="project-title"
+              ><a href="https://sitiaish.github.io/baibella/" target="_blank">Bai Bella. </a></span
+            >
             <img src="@/assets/img/bella.png" height="120px" class="thumbnail mr-8 mb-6" /><br />
           </p>
         </div>
 
         <div v-if="$vuetify.breakpoint.smAndDown">
-          <p class="text-projects text-center">
-            <a href="https://titleofmysextape.com" target="_blank">Brooklyn 99 tribute.</a>
+          <p class="text-projects text-center"><a href="https://pocoloco.io" target="_blank">Pocoloco.io</a></p>
+          <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mb-6" />
+
+          <!-- <p class="text-projects text-center">
+            <a href="https://sitiaish.github.io/b99" target="_blank">Brooklyn 99 tribute.</a>
           </p>
-          <img src="@/assets/img/b99.png" height="120px" class="thumbnail mb-6" />
+          <img src="@/assets/img/b99.png" height="120px" class="thumbnail mb-6" /> -->
 
           <p class="text-projects text-center">
             <a href="https://sitiaish.github.io/sg-masjid-project/" target="_blank">Mosques in S'pore.</a>
@@ -61,11 +65,8 @@
           </p>
           <img src="@/assets/img/campaign.png" height="120px" class="thumbnail mb-6" /><br />
 
-          <p class="text-projects text-center"><a href="https://pocoloco.io" target="_blank">Pocoloco.io</a></p>
-          <img src="@/assets/img/pocoloco.png" height="120px" class="thumbnail mb-6" />
-
           <p class="text-projects text-center">
-            <a href="https://bai-bella.netlify.app/" target="_blank">Bai Bella</a>
+            <a href="https://sitiaish.github.io/baibella/" target="_blank">Bai Bella</a>
           </p>
           <img src="@/assets/img/bella.png" height="120px" class="thumbnail mb-6" />
         </div>
